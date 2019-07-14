@@ -26,7 +26,7 @@ namespace MemeVM.Translation.Handlers {
             var buf = new byte[7];
             buf[0] = (byte)VMOpCode.Stfld;
             var op = (Tuple<short, FieldDef>)instruction.Operand;
-            var refid = op.Item1, field = op.Item2;
+            short refid = op.Item1, FieldDef field = op.Item2;
             Array.Copy(BitConverter.GetBytes(refid), 0, buf, 1, 2);
             Array.Copy(BitConverter.GetBytes(TokenGetter.GetMdToken(field)), 0, buf, 3, 4);
             return buf;
