@@ -12,7 +12,7 @@ namespace MemeVM.Translation {
                 if (translator == null)
                     return null;
 
-                var res = translator.Translate(body, method, i, body.OffsetHelper, out var good);
+                var res = translator.Translate(body, method, i, body.OffsetHelper, out bool good);
                 if (res.OpCode != VMOpCode.UNUSED) list.Add(res);
                 if (!good)
                     return null;
