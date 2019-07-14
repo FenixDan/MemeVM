@@ -1,6 +1,9 @@
 # MemeVM
 A small virtualizer for .NET which works together with ConfuserEx
 
+You can download a compiled version of MemeVM from Appveyor:
+[![Appveyor](https://ci.appveyor.com/api/projects/status/ys0vhl5y8wf39625?svg=true)](https://ci.appveyor.com/project/xsilent007/memevm/build/artifacts)
+
 ## Wtf is this???!
 
 This projects takes your existing .NET MSIL code and "translates" it to instructions only our virtual machine will understand.
