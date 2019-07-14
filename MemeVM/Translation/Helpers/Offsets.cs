@@ -10,7 +10,7 @@ namespace MemeVM.Translation.Helpers {
         readonly List<Offset> _offsets;
 
         internal void Add(int index, int offset) {
-            return _offsets.Add(new Offset(index, offset));
+            _offsets.Add(new Offset(index, offset));
         }
 
         internal int Get(int index) {
