@@ -16,7 +16,9 @@ namespace MemeVM {
             if (!parameters.Targets.Any())
                 return;
 
-            var current = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException();
+            var current = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            if (current == null)
+                throw new InvalidOperationException();
             var runtimePath = Path.Combine(current, "MemeVM.Runtime.dll");
             var newPath = Path.Combine(context.OutputDirectory, "MemeVM.Runtime.dll");
 

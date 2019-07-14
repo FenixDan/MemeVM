@@ -26,7 +26,9 @@ namespace MemeVM.Translation.Handlers {
         public byte[] Serialize(VMBody body, VMInstruction instruction, Offsets helper) {
             var buf = new byte[7];
             buf[0] = (byte)VMOpCode.Newarr;
-            var (referenceid, type) = (Tuple<short, TypeDef>)instruction.Operand;
+            var op = (Tuple<short, TypeDef>)instruction.Operand;
+            short referenceid = op.Item1;
+            TypeDef type = op.Item2;
             Array.Copy(BitConverter.GetBytes(referenceid), 0, buf, 1, 2);
             Array.Copy(BitConverter.GetBytes(TokenGetter.GetMdToken(type)), 0, buf, 3, 4);
             return buf;

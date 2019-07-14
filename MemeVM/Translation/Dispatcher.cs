@@ -11,8 +11,9 @@ namespace MemeVM.Translation {
                 var translator = Map.Lookup(method.Body.Instructions[i].OpCode);
                 if (translator == null)
                     return null;
-
-                var res = translator.Translate(body, method, i, body.OffsetHelper, out var good);
+                
+                bool good;
+                var res = translator.Translate(body, method, i, body.OffsetHelper, out good);
                 if (res.OpCode != VMOpCode.UNUSED) list.Add(res);
                 if (!good)
                     return null;

@@ -4,16 +4,18 @@ namespace MemeVM.Runtime.Engine {
     class LocalStorage {
         object[] _locals;
 
-        internal LocalStorage() =>
+        internal LocalStorage() {
             _locals = new object[10];
+        }
 
         ~LocalStorage() {
             Array.Clear(_locals, 0, _locals.Length);
             _locals = null;
         }
 
-        internal object Get(short index) =>
-            _locals[index];
+        internal object Get(short index) {
+            return _locals[index];
+        }
 
         internal void Set(short index, object val) {
             if (index >= _locals.Length) {
