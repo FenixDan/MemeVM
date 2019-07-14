@@ -6,11 +6,13 @@ build:
 after_build:
 - cmd: >-
     mkdir artifacts
-
+    
     cp MemeVM.Confuser\bin\Release\MemeVM.Confuser.exe artifacts\MemeVM.Confuser.exe
-
+    
     cp MemeVM\bin\Release\MemeVM.dll artifacts\MemeVM.dll
-
+    
     cp MemeVM.Runtime\bin\Release\MemeVM.Runtime.dll artifacts\MemeVM.Runtime.dll
+    
+    7z a MemeVM.7z artifacts\*
 artifacts:
 - path: MemeVM.7z
