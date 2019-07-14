@@ -14,5 +14,5 @@ after_build:
     cp MemeVM.Runtime\bin\Release\MemeVM.Runtime.dll artifacts\MemeVM.Runtime.dll
 artifacts:
 - path: artifacts/*
-- name: MemeVM
-- type: zip
+  name: MemeVM
+  type: zip
