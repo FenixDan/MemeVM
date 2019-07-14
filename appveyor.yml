@@ -1,0 +1,18 @@
+version: 1.0.{build}-{branch}
+configuration: Release
+platform: Any CPU
+build:
+  verbosity: minimal
+after_build:
+- cmd: >-
+    mkdir artifacts
+
+    cp MemeVM.Confuser\bin\Release\MemeVM.Confuser.exe artifacts\MemeVM.Confuser.exe
+
+    cp MemeVM\bin\Release\MemeVM.dll artifacts\MemeVM.dll
+
+    cp MemeVM.Runtime\bin\Release\MemeVM.Runtime.dll artifacts\MemeVM.Runtime.dll
+artifacts:
+- path: artifacts/*
+- name: MemeVM
+- type: zip
