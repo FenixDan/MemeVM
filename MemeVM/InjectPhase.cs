@@ -22,7 +22,7 @@ namespace MemeVM {
             var runtimePath = Path.Combine(current, "MemeVM.Runtime.dll");
             var newPath = Path.Combine(context.OutputDirectory, "MemeVM.Runtime.dll");
 
-            var cliPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Confuser.CLI.exe");
+            var cliPath = Path.Combine(current, "Confuser.CLI.exe");
             
             Directory.CreateDirectory(Path.GetDirectoryName(newPath));
             File.Copy(runtimePath, newPath, true);
